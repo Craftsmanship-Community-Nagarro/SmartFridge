@@ -12,4 +12,8 @@ public class Fridge {
   public Date getCreationDate() {
     return creationDate;
   }
+
+    public String getFormattedDisplay() {
+      return "";
+    }
 }

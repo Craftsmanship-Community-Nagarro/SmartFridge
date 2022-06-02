@@ -14,4 +14,12 @@ public class SmartFridgeTest {
         Fridge fridge = new Fridge(creationDate);
         assertThat(fridge.getCreationDate()).isEqualTo(creationDate);
     }
+
+    @Test
+    public void testEmptyFridgeDisplay(){
+        Fridge fridge = new Fridge(new Date());
+
+        assertThat(fridge.getFormattedDisplay()).isEqualTo("EXPIRED:\nREMAINING:");
+    }
+
 }
