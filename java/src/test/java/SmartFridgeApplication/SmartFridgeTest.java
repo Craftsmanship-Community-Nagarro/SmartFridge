@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class SmartFridgeTest {
 
@@ -19,7 +18,6 @@ public class SmartFridgeTest {
     @Test
     public void testEmptyFridgeDisplay(){
         Fridge fridge = new Fridge(LocalDateTime.now());
-
         assertThat(fridge.getFormattedDisplay()).isEqualTo("EXPIRED:\nREMAINING:");
     }
 
@@ -27,8 +25,8 @@ public class SmartFridgeTest {
     public void testNextDay(){
         LocalDateTime creationDate = LocalDateTime.now();
         Fridge fridge = new Fridge(creationDate);
-
-        assertThat(fridge.getAfterTick()).isEqualTo(creationDate.plusDays(1));
+        fridge.nextDay();
+        assertThat(fridge.getCurrentDate()).isEqualTo(creationDate.plusDays(1));
     }
 
 }
