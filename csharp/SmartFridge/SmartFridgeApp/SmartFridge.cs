@@ -8,9 +8,13 @@ namespace SmartFridgeApp
 {
     public class SmartFridge
     {
-        public void SomeMethod()
+        public DisplayData DisplayData()
         {
-
+            return new DisplayData
+            {
+                ExpiredItems = new List<string>(),
+                RemainingItems = new List<string>()
+            };
         }
     }
 }

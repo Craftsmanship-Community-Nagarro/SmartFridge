@@ -4,11 +4,13 @@ namespace SmartFridgeApp.Tests
     public class SmartFridgeTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EmptyFridge()
         {
             var smartFridge = new SmartFridge();
-            smartFridge.SomeMethod();
+            var displayData = smartFridge.DisplayData();
 
+            Assert.AreEqual(0, displayData.ExpiredItems.Count);
+            Assert.AreEqual(0, displayData.RemainingItems.Count);
         }
     }
 }
