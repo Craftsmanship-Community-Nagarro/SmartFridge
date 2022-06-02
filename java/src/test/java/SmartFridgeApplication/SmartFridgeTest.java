@@ -1,12 +1,17 @@
 package SmartFridgeApplication;
 
-import org.junit.Assert;
+import at.nagarro.craftmanship.fridge.Fridge;
+import static org.assertj.core.api.Assertions.*;
 import org.junit.Test;
+
+import java.util.Date;
 
 public class SmartFridgeTest {
 
     @Test
     public void testFridgeCreationDate(){
-        Assert.assertTrue(false);
+        Date creationDate = new Date();
+        Fridge fridge = new Fridge(creationDate);
+        assertThat(fridge.getCreationDate()).isEqualTo(creationDate);
     }
 }
