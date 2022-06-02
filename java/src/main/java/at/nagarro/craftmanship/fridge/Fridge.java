@@ -1,19 +1,23 @@
 package at.nagarro.craftmanship.fridge;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Fridge {
-  private final Date creationDate;
+    private final LocalDateTime creationDate;
 
-  public Fridge(Date creationDate) {
-    this.creationDate = creationDate;
-  }
+    public Fridge(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
 
-  public Date getCreationDate() {
-    return creationDate;
-  }
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
 
     public String getFormattedDisplay() {
-      return "";
+        return "EXPIRED:\nREMAINING:";
+    }
+
+    public LocalDateTime getAfterTick() {
+        return null;
     }
 }
