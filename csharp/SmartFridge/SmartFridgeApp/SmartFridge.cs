@@ -28,5 +28,9 @@ namespace SmartFridgeApp
             items.Add(item);
         }
 
+        public void NextDay()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

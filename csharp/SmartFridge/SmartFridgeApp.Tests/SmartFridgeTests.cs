@@ -1,3 +1,6 @@
+using FluentAssertions;
+using FluentAssertions.Extensions;
+
 namespace SmartFridgeApp.Tests
 {
     [TestClass]
@@ -55,6 +58,19 @@ namespace SmartFridgeApp.Tests
 
             Assert.AreEqual(0, displayData.ExpiredItems.Count);
             Assert.AreEqual(1, displayData.RemainingItems.Count);
+        }
+
+        [TestMethod]
+        public void FridgeShouldIncrementCurrentDateAfterTick()
+        {
+            var smartFridge = new SmartFridge
+            {
+                CurrentDate = 15.July(2022)
+            };
+
+            smartFridge.NextDay();
+
+            smartFridge.CurrentDate.Should().BeSameDateAs(16.July(2022));
         }
     }
 }
