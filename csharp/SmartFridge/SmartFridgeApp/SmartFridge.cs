@@ -16,8 +16,8 @@ namespace SmartFridgeApp
         {
             return new DisplayData
             {
-                ExpiredItems = items.Select(item => item.Name).ToList(),
-                RemainingItems = new List<string>()
+                ExpiredItems = items.Where(item => item.Expiry < CurrentDate).Select(item => item.Name).ToList(),
+                RemainingItems = items.Where(item => item.Expiry > CurrentDate).Select(item => item.Name).ToList()
             };
         }
 
