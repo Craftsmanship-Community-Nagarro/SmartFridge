@@ -30,7 +30,7 @@ namespace SmartFridgeApp
 
         public void NextDay()
         {
-            throw new NotImplementedException();
+            CurrentDate = CurrentDate.AddDays(1);
         }
     }
 }
